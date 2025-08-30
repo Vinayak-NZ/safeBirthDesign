@@ -1,0 +1,129 @@
+﻿item_id,codename_id,page_id,lessons_completed,open_ended_item,closed_item
+VorstGeb ,VorstGeb ,A1_L0_P1 ,0,1,0
+WünInfo ,WünInfo ,A1_L0_P4 ,0,1,0
+WünKommAng ,WünKommAng ,A1_L0_P4 ,0,1,0
+Entbindung_Datum ,Entbindung_Datum ,A1_L0_P5 ,0,0,1
+COMM1_v1 ,COMM1_v1 ,A1_L0_P5 ,0,0,1
+COMM2_v1 ,COMM2_v1 ,A1_L0_P5 ,0,0,1
+COMM3_v1 ,COMM3_v1 ,A1_L0_P5 ,0,0,1
+COMM4_v1 ,COMM4_v1 ,A1_L0_P5 ,0,0,1
+COMM5_v1 ,COMM5_v1 ,A1_L0_P5 ,0,0,1
+COMM6_v1 ,COMM6_v1 ,A1_L0_P5 ,0,0,1
+COMM7_v1 ,COMM7_v1 ,A1_L0_P5 ,0,0,1
+RiskPer_v1 ,RiskPer_v1 ,A1_L0_P6 ,0,0,1
+OE_v1 ,OE_v1 ,A1_L0_P6 ,0,0,1
+CSE_v1 ,CSE_v1 ,A1_L0_P6 ,0,0,1
+Int_v1 ,Int_v1 ,A1_L0_P6 ,0,0,1
+PL_v1 ,PL_v1 ,A1_L0_P6 ,0,0,1
+Barr_v1 ,Barr_v1 ,A1_L0_P7 ,0,1,0
+VUEIC1_v1 ,VUEIC1_v1 ,A1_L0_P8 ,0,0,1
+VUEIC2_v1 ,VUEIC2_v1 ,A1_L0_P8 ,0,0,1
+WICHTIGKOMP_L1 ,WICHTIGKOMP_L1 ,A1_L1_P2 ,0,0,1
+WICHTIGTEXT_L1 ,WICHTIGTEXT_L1 ,A1_L1_P2 ,0,1,0
+AUSSAGEPASSEND_L1 ,AUSSAGEPASSEND_L1 ,A1_L1_P5 ,0,0,1
+WICHTIGKOMP2_L1 ,WICHTIGKOMP2_L1 ,A1_L1_P6 ,0,0,1
+SITUATIONKOMP_L1 ,SITUATIONKOMP_L1 ,A1_L1_P7 ,0,1,0
+L2HäufigkeitSit ,L2HäufigkeitSit ,A1_L2_P4 ,1,0,1
+L2Worum ,L2Worum ,A1_L2_P7 ,1,0,1
+L2Inhalt ,L2Inhalt ,A1_L2_P7 ,1,0,1
+L2Wie ,L2Wie ,A1_L2_P7 ,1,0,1
+L3Situation ,L3Situation ,A1_L3_P2 ,2,0,1
+L3VorstSitu ,L3VorstSitu ,A1_L3_P4 ,2,1,0
+L3WichtigTipp ,L3WichtigTipp ,A1_L3_P7 ,2,1,0
+L3CTG ,L3CTG ,A1_L3_P8 ,2,0,1
+COMM1_v2 ,COMM1_v2 ,A1_Z_VOR_A1_L4_P1 ,3,0,1
+COMM2_v2 ,COMM2_v2 ,A1_Z_VOR_A1_L4_P1 ,3,0,1
+COMM3_v2 ,COMM3_v2 ,A1_Z_VOR_A1_L4_P1 ,3,0,1
+COMM4_v2 ,COMM4_v2 ,A1_Z_VOR_A1_L4_P1 ,3,0,1
+COMM5_v2 ,COMM5_v2 ,A1_Z_VOR_A1_L4_P1 ,3,0,1
+COMM6_v2 ,COMM6_v2 ,A1_Z_VOR_A1_L4_P1 ,3,0,1
+COMM7_v2 ,COMM7_v2 ,A1_Z_VOR_A1_L4_P1 ,3,0,1
+RiskPer_v2 ,RiskPer_v2 ,A1_Z_VOR_A1_L4_P2 ,3,0,1
+OE_v2 ,OE_v2 ,A1_Z_VOR_A1_L4_P2 ,3,0,1
+CSE_v2 ,CSE_v2 ,A1_Z_VOR_A1_L4_P2 ,3,0,1
+Int_v2 ,Int_v2 ,A1_Z_VOR_A1_L4_P2 ,3,0,1
+PL_v2 ,PL_v2 ,A1_Z_VOR_A1_L4_P2 ,3,0,1
+L4FaktStress ,L4FaktStress ,A1_L4_P1 ,3,0,1
+L4FaktBesser ,L4FaktBesser ,A1_L4_P3 ,3,0,1
+L4Rückfrage1 ,L4Rückfrage1 ,A1_L4_P7 ,3,0,1
+L4Rückmeldung ,L4Rückmeldung ,A1_L4_P8 ,3,0,1
+L4Kreisschl ,L4Kreisschl ,A1_L4_P9 ,3,0,1
+L4SitBesch ,L4SitBesch ,A1_L4_P10 ,3,0,1
+L4Verbesserung ,L4Verbesserung ,A1_L4_P10 ,3,0,1
+L4EvalCL ,L4EvalCL ,A1_L4_P11 ,3,0,1
+L5Aufgabe1 ,L5Aufgabe1 ,A1_L5_P2 ,4,1,0
+L5Gedanken1 ,L5Gedanken1 ,A1_L5_P2 ,4,1,0
+L5Gefühle1 ,L5Gefühle1 ,A1_L5_P2 ,4,1,0
+L5Ängste1 ,L5Ängste1 ,A1_L5_P2 ,4,1,0
+L5Aufgabe2 ,L5Aufgabe2 ,A1_L5_P3 ,4,1,0
+L5Gedanken2 ,L5Gedanken2 ,A1_L5_P3 ,4,1,0
+L5Gefühle2 ,L5Gefühle2 ,A1_L5_P3 ,4,1,0
+L5Ängste2 ,L5Ängste2 ,A1_L5_P3 ,4,1,0
+L5Aufgabe3 ,L5Aufgabe3 ,A1_L5_P4 ,4,1,0
+L5Gedanken3 ,L5Gedanken3 ,A1_L5_P4 ,4,1,0
+L5Gefühle3 ,L5Gefühle3 ,A1_L5_P4 ,4,1,0
+L5Ängste3 ,L5Ängste3 ,A1_L5_P4 ,4,1,0
+L5Aufgabe4 ,L5Aufgabe4 ,A1_L5_P5 ,4,1,0
+L5Gedanken4 ,L5Gedanken4 ,A1_L5_P5 ,4,1,0
+L5Gefühle4 ,L5Gefühle4 ,A1_L5_P5 ,4,1,0
+L5Ängste4 ,L5Ängste4 ,A1_L5_P5 ,4,1,0
+L5Perspektive ,L5Perspektive ,A1_L5_P6 ,4,1,0
+L6Gelungen ,L6Gelungen ,A1_L6_P1 ,5,1,0
+L6IntroSitu ,L6IntroSitu ,A1_L6_P3 ,5,1,0
+L6Umsetzung ,L6Umsetzung ,A1_L6_P4 ,5,1,0
+COMM1_v3,COMM1_v3,A1_Z_VOR_A1_L7_P1 ,3,0,1
+COMM2_v3,COMM2_v3,A1_Z_VOR_A1_L7_P1 ,3,0,1
+COMM3_v3,COMM3_v3,A1_Z_VOR_A1_L7_P1 ,3,0,1
+COMM4_v3,COMM4_v3,A1_Z_VOR_A1_L7_P1 ,3,0,1
+COMM5_v3,COMM5_v3,A1_Z_VOR_A1_L7_P1 ,3,0,1
+COMM6_v3,COMM6_v3,A1_Z_VOR_A1_L7_P1 ,3,0,1
+COMM7_v3,COMM7_v3,A1_Z_VOR_A1_L4_P1 ,3,0,1
+RiskPer_v3,RiskPer_v3,A1_Z_VOR_A1_L7_P2 ,3,0,1
+OE_v3,OE_v3,A1_Z_VOR_A1_L7_P2 ,3,0,1
+CSE_v3,CSE_v3,A1_Z_VOR_A1_L7_P2 ,3,0,1
+Int_v3,Int_v3,A1_Z_VOR_A1_L7_P2 ,3,0,1
+PL_v3,PL_v3,A1_Z_VOR_A1_L7_P2 ,3,0,1
+L7Vorbereitung ,L7Vorbereitung ,A1_L7_P1 ,6,1,0
+L7Gelungen ,L7Gelungen ,A1_L7_P1 ,6,1,0
+L7Verbesserung ,L7Verbesserung ,A1_L7_P1 ,6,1,0
+L7Vorbereitung2 ,L7Vorbereitung2 ,A1_L7_P3 ,6,1,0
+L8FaktStress ,L8FaktStress ,A1_L8_P1 ,7,0,1
+L8SitBesch ,L8SitBesch ,A1_L8_P4 ,7,1,0
+L8SMZukunft ,L8SMZukunft ,A1_L8_P5 ,7,1,0
+L8Strategie ,L8Strategie ,A1_L8_P6 ,7,0,1
+L9SitSchwierig ,L9SitSchwierig ,A1_L9_P2 ,8,1,0
+L9Ideen ,L9Ideen ,A1_L9_P3 ,8,1,0
+L9Ichwill ,L9Ichwill ,A1_L9_PLAENE ,8,1,0
+L9WoWann  ,L9WoWann  ,A1_L9_PLAENE ,8,1,0
+L9WieGenau ,L9WieGenau ,A1_L9_PLAENE ,8,1,0
+L9WasWenn ,L9WasWenn ,A1_L9_PLAENE ,8,1,0
+L9WasMachen ,L9WasMachen ,A1_L9_PLAENE ,8,1,0
+L9Passend ,L9Passend ,A1_L9_BEWERTEN ,8,0,1
+L9Effektiv ,L9Effektiv ,A1_L9_BEWERTEN ,8,0,1
+L9Praktisch ,L9Praktisch ,A1_L9_BEWERTEN ,8,0,1
+L9Präzise ,L9Präzise ,A1_L9_BEWERTEN ,8,0,1
+L9Zufrieden ,L9Zufrieden ,A1_L9_ZUFRIEDENHEIT ,8,0,1
+L10Rep1 ,L10Rep1 ,A1_L10_P1 ,9,0,1
+L10Rep2 ,L10Rep2 ,A1_L10_P2 ,9,0,1
+L10Rep3 ,L10Rep3 ,A1_L10_P3 ,9,0,1
+L10Rep4 ,L10Rep4 ,A1_L10_P4,9,0,1
+L10Rep5 ,L10Rep5 ,A1_L10_P5 ,9,0,1
+L10Rep6 ,L10Rep6 ,A1_L10_P6 ,9,0,1
+COMM1_v4 ,COMM1_v4 ,A1_L10_P7 ,9,0,1
+COMM2_v4 ,COMM2_v4 ,A1_L10_P7 ,9,0,1
+COMM3_v4 ,COMM3_v4 ,A1_L10_P7 ,9,0,1
+COMM4_v4 ,COMM4_v4 ,A1_L10_P7 ,9,0,1
+COMM5_v4 ,COMM5_v4 ,A1_L10_P7 ,9,0,1
+COMM6_v4 ,COMM6_v4 ,A1_L10_P7 ,9,0,1
+COMM7_v4 ,COMM7_v4 ,A1_L10_P7 ,9,0,1
+RiskPer_v4 ,RiskPer_v4 ,A1_L10_P8 ,9,0,1
+OE_v4 ,OE_v4 ,A1_L10_P8 ,9,0,1
+CSE_v4 ,CSE_v4 ,A1_L10_P8 ,9,0,1
+Int_v4 ,Int_v4 ,A1_L10_P8 ,9,0,1
+PL_v4 ,PL_v4 ,A1_L10_P8 ,9,0,1
+VUEIC1_v2 ,VUEIC1_v2 ,A1_L10_P9 ,9,0,1
+VUEIC2_v2 ,VUEIC2_v2 ,A1_L10_P9 ,9,0,1
+L10Nuterfreundlichkeit ,L10Nuterfreundlichkeit ,A1_L10_P11 ,9,0,1
+L10Inhalt ,L10Inhalt ,A1_L10_P11 ,9,0,1
+L10Nutzen ,L10Nutzen ,A1_L10_P11 ,9,0,1
+L10Gelernt ,L10Gelernt ,A1_L10_P12 ,9,1,0
