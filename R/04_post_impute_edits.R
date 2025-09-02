@@ -1,24 +1,14 @@
 ## ---- prepare-mice-output
 
-tx_post <- function(var, data){
+data_imputed_output <- list()
+
+for (i in 1:data_imputed$m){
   
-  if (var %in% c("safe1", "safe2")) {
-    
-    data[[paste0(var, "_post")]] <- 
-      ifelse(data[["group"]] == 0, data[[paste0(var, "_t1")]], 
-             data[[paste0(var, "_t2")]])
-    
-  } else{
-    
-    data[[paste0(var, "_post")]] <- 
-      ifelse(data[["group"]] == 0, data[[paste0(var, "_t1")]], 
-             data[[paste0(var, "_t4")]])
-    
-  }
-  
-  return(data)
+  data_imputed_output[[i]] <- complete(data_imputed, i)
   
 }
+
+## ---- post-imputation-edit
 
 vars <- c("comm1","comm2","comm3","comm4","comm5","comm6","comm7",
           "hapa2","hapa3","hapa4","hapa5",
@@ -121,6 +111,9 @@ for (i in 1:length(data_imputed_output)){
   data_imputed_output[[i]]$age_scaled <- 
     scale(data_imputed_output[[i]]$age)[,1]
   
+  data_imputed_output[[i]]$hapa2_scaled <- 
+    scale(data_imputed_output[[i]]$hapa2)[,1]
+  
   data_imputed_output[[i]]$hapa3_scaled <- 
     scale(data_imputed_output[[i]]$hapa3)[,1]
   
@@ -141,7 +134,7 @@ for (i in 1:length(data_imputed_output)){
                                                            "age_scaled",
                                                            "education",
                                                            "fam_comp", 
-                                                           "hapa2", 
+                                                           "hapa2_scaled", 
                                                            "hapa3_scaled", 
                                                            "hapa4", 
                                                            "hapa5_scaled", 

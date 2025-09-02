@@ -1,4 +1,6 @@
+## ---- interpret-parameters
 
+# create dataset with required variables
 app_v2_aux_var <- app_v2
 
 names(app_v2_aux_var) <- 
@@ -39,7 +41,7 @@ app_v2_aux_var$safe_mean_post <- rowMeans(
   na.rm = TRUE
 )
 
-
+# apply-parameters-percentage-point-changes
 sd(app_v2_aux_var$comm_mean_pre)*bayesian_model_comm_summary$fixed$Estimate[10]
 
 sd(app_v2_aux_var$safe_mean_pre)*bayesian_model_safe_summary$fixed$Estimate[10]
@@ -48,7 +50,11 @@ sd(app_v2_aux_var$hapa3_pre)*bayesian_model_hapa3_summary$fixed$Estimate[10]
 
 sd(app_v2_aux_var$hapa5_pre)*bayesian_model_hapa5_summary$fixed$Estimate[10]
 
-rel_comm   <- 100 * 5.283634  / mean(app_v2_aux_var$comm_mean_pre,  na.rm=TRUE)
-rel_safe   <- 100 * (-8.891069) / mean(app_v2_aux_var$safe_mean_pre,  na.rm=TRUE) 
-rel_hapa3  <- 100 * 4.311998   / mean(app_v2_aux_var$hapa3_pre,      na.rm=TRUE)
-rel_hapa5  <- 100 * 21.57816   / mean(app_v2_aux_var$hapa5_pre,      na.rm=TRUE)
+# apply-parameters-relative-baseline-changes-mean-percent
+100 * 5.283634  / mean(app_v2_aux_var$comm_mean_pre,  na.rm=TRUE)
+
+100 * (-8.891069) / mean(app_v2_aux_var$safe_mean_pre,  na.rm=TRUE) 
+
+100 * 4.311998   / mean(app_v2_aux_var$hapa3_pre,      na.rm=TRUE)
+
+100 * 21.57816   / mean(app_v2_aux_var$hapa5_pre,      na.rm=TRUE)

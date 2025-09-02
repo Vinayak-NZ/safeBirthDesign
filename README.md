@@ -25,8 +25,4 @@ Please follow the steps below to re-produce the results/ gain insights into how 
 
 This program of work was carried out as part of the TeamBaby project and the Health CASCADE network.
 
-![teambaby_logo](images/teambaby_logo.png)
-
-![hc_logo](images/hc_logo.PNG)
-
-![msca_logo](images/msca_logo.PNG)
+<img src="images/teambaby_logo.png" alt="teambaby" width="150"/> ![hc_logo](images/hc_logo.PNG) ![msca_logo](images/msca_logo.PNG)

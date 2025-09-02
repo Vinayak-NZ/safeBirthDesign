@@ -20,12 +20,3 @@ data_imputed <- mice(
   predictorMatrix = pred,
   method = meth
 )
-
-# create mice output
-data_imputed_output <- list()
-
-for (i in 1:data_imputed$m){
-  
-  data_imputed_output[[i]] <- complete(data_imputed, i)
-  
-}

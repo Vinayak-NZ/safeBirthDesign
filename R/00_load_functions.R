@@ -156,7 +156,7 @@ user_feedback_var <- function(var, label, mu_output, data){
   
 }
 
-# partial-eta-squared
+## ---- partial-eta-squared
 eta_squared <- function(model) {
   
   SSeffect <- summary(aov(model))[[1]]["Sum Sq"]
@@ -168,11 +168,32 @@ eta_squared <- function(model) {
   return(eta_sq)
 }
 
-# cramers-v-function
+## ---- cramers-v-function
 cramers_V <- function(chi, n, df){
   
   output <- sqrt((chi) / (n * df))
   
   return(output)
+  
+}
+
+## ---- transform-to-post
+tx_post <- function(var, data){
+  
+  if (var %in% c("safe1", "safe2")) {
+    
+    data[[paste0(var, "_post")]] <- 
+      ifelse(data[["group"]] == 0, data[[paste0(var, "_t1")]], 
+             data[[paste0(var, "_t2")]])
+    
+  } else{
+    
+    data[[paste0(var, "_post")]] <- 
+      ifelse(data[["group"]] == 0, data[[paste0(var, "_t1")]], 
+             data[[paste0(var, "_t4")]])
+    
+  }
+  
+  return(data)
   
 }
