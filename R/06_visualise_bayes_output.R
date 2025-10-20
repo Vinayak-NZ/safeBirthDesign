@@ -32,7 +32,7 @@ model_01_comm_plot <-
   geom_point(color = "#205B87", size = 2) +
   geom_errorbarh(aes(xmin = conf.low, xmax = conf.high), 
                  height = 0.2, color = "#205B87") +
-  labs(title = "Pooled Posterior Estimates",
+  labs(title = "Communication competency - Pooled Posterior Estimates",
        subtitle = "95% Credible Intervals (from multiply imputed model)",
        x = "Estimate",
        y = NULL) +
@@ -88,7 +88,7 @@ model_02_safe_plot <-
   geom_point(color = "#205B87", size = 2) +
   geom_errorbarh(aes(xmin = conf.low, xmax = conf.high), 
                  height = 0.2, color = "#205B87") +
-  labs(title = "Pooled Posterior Estimates",
+  labs(title = "Perception of adverse events - Pooled Posterior Estimates",
        subtitle = "95% Credible Intervals (from multiply imputed model)",
        x = "Estimate",
        y = NULL) +
@@ -144,7 +144,7 @@ model_03_hapa2_plot <-
   geom_point(color = "#205B87", size = 2) +
   geom_errorbarh(aes(xmin = conf.low, xmax = conf.high), 
                  height = 0.2, color = "#205B87") +
-  labs(title = "Pooled Posterior Estimates",
+  labs(title = "Outcome expectancy -Pooled Posterior Estimates",
        subtitle = "95% Credible Intervals (from multiply imputed model)",
        x = "Estimate",
        y = NULL) +
@@ -200,7 +200,7 @@ model_04_hapa3_plot <-
   geom_point(color = "#205B87", size = 2) +
   geom_errorbarh(aes(xmin = conf.low, xmax = conf.high), 
                  height = 0.2, color = "#205B87") +
-  labs(title = "Pooled Posterior Estimates",
+  labs(title = "Self-efficacy - Pooled Posterior Estimates",
        subtitle = "95% Credible Intervals (from multiply imputed model)",
        x = "Estimate",
        y = NULL) +
@@ -256,7 +256,7 @@ model_05_hapa5_plot <-
   geom_point(color = "#205B87", size = 2) +
   geom_errorbarh(aes(xmin = conf.low, xmax = conf.high), 
                  height = 0.2, color = "#205B87") +
-  labs(title = "Pooled Posterior Estimates",
+  labs(title = "Action planning - Pooled Posterior Estimates",
        subtitle = "95% Credible Intervals (from multiply imputed model)",
        x = "Estimate",
        y = NULL) +
