@@ -19,10 +19,16 @@ teambaby_webapp_fc |>
       dplyr::mutate(
         bg_fill = ifelse(id == 5, "violet", bg_fill),
         bg_fill = ifelse(id == 12, "violet", bg_fill), 
-        text = ifelse(id == 3, "Waitlist Control\n (4 week wait to get access to web-app)\n 324 (49.77%)", text),
-        text = ifelse(id == 4, "Intervention\n (Immediate access to web-app)\n 327 (50.23%)", text),
-        text = ifelse(id == 5, "App registration completed\n (Used as post-measure)\n 45 (13.89%)", text),
-        text = ifelse(id == 12, "Module 3 completed\n (Used as post-measure)\n 13 (65.00%)", text)
+        text = ifelse(id == 3, "t0\n Waitlist Control\n (4 week wait to get access to web-app)\n N = 324 (49.77%)", text),
+        text = ifelse(id == 4, "t0\n Intervention\n (Immediate access to web-app)\n N = 327 (50.23%)", text),
+        text = ifelse(id == 5, "t1\n App registration completed\n (Used as post-measure)\n n = 45 (13.89%)", text),
+        text = ifelse(id == 6, "t1\n App registration completed\n n = 88 (26.91%)", text),
+        text = ifelse(id == 7, "t2\n Module 1 completed\n n = 25 (55.56%)", text),
+        text = ifelse(id == 8, "t2\n Module 1 completed\n n = 38 (43.18%)", text),
+        text = ifelse(id == 9, "t3\n Module 2 completed\n n = 11 (44.00%)", text),
+        text = ifelse(id == 10, "t3\n Module 2 completed\n n = 20 (52.63%)", text),
+        text = ifelse(id == 11, "t4\n Module 3 completed\n n = 11 (100.00%)", text),
+        text = ifelse(id == 12, "t4\n Module 3 completed\n (Used as post-measure)\n n = 13 (65.00%)", text)
       )
   ) |>
   fc_draw()
