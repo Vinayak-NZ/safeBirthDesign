@@ -46,6 +46,8 @@ sd(app_v2_aux_var$comm_mean_pre)*bayesian_model_comm_summary$fixed$Estimate[10]
 
 sd(app_v2_aux_var$safe_mean_pre)*bayesian_model_safe_summary$fixed$Estimate[10]
 
+sd(app_v2_aux_var$hapa2_pre)*bayesian_model_hapa2_summary$fixed$Estimate[10]
+
 sd(app_v2_aux_var$hapa3_pre)*bayesian_model_hapa3_summary$fixed$Estimate[10]
 
 sd(app_v2_aux_var$hapa5_pre)*bayesian_model_hapa5_summary$fixed$Estimate[10]

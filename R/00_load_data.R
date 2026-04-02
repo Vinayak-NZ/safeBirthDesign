@@ -18,3 +18,9 @@ app_v2_baseline_02 <- read.csv("input/baseline_v2_improved_nonr_english.csv", se
 app_v2_baseline_03 <- read.csv("input/baseline_v2_improved_nonr_german.csv", sep = ";")
 
 data_imputed <- readRDS("output/data_imputed_2025_08_31.rds")
+
+sensitivity_comms <- readRDS("output/results_comm.rds")
+sensitivity_safe <- readRDS("output/results_safe.rds")
+sensitivity_hapa2 <- readRDS("output/results_hapa2.rds")
+sensitivity_hapa3 <- readRDS("output/results_hapa3.rds")
+sensitivity_hapa5 <- readRDS("output/results_hapa5.rds")

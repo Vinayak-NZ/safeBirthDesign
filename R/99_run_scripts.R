@@ -23,3 +23,8 @@ source("R/06_socio_dems.R")
 source("R/06_create_flowchart_input.R")
 source("R/06_output_flowchart.R")
 source("R/06_visualise_bayes_output.R")
+
+## ---- sensitivity-check
+source("R/07_sensitivity_check_01.R")
+source("R/07_sensitivity_check_02.R")
+source("R/07_sensitivity_check_03.R")

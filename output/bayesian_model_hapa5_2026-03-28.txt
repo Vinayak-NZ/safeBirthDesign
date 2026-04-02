@@ -1,0 +1,32 @@
+ Family: gaussian 
+  Links: mu = identity; sigma = identity 
+Formula: hapa5_scaled ~ group * time + age_scaled + education + fam_comp + (1 | id) 
+   Data: data_imputed_long (Number of observations: 31720) 
+  Draws: 4 chains, each with iter = 4000; warmup = 500; thin = 1;
+         total post-warmup draws = 14000
+
+Multilevel Hyperparameters:
+~id (Number of levels: 126) 
+              Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)     0.79      0.05     0.69     0.90 1.00      962     1497
+
+Regression Coefficients:
+             Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+Intercept       -0.41      0.23    -0.86     0.03 1.00     2285     3174
+group1           0.74      0.06     0.61     0.86 1.00     1878     2764
+time2           -0.08      0.01    -0.10    -0.05 1.00     5039     7087
+age_scaled      -0.04      0.07    -0.18     0.10 1.01      997     1385
+education.L     -0.33      0.39    -1.10     0.44 1.00     2680     3892
+education.Q      0.31      0.33    -0.33     0.97 1.00     2343     3493
+education.C     -0.25      0.24    -0.73     0.23 1.00     1698     3177
+fam_comp.L      -0.42      0.33    -1.06     0.22 1.00     2224     3592
+fam_comp.Q       0.19      0.22    -0.24     0.61 1.00     1643     3237
+group1:time2     0.83      0.02     0.79     0.86 1.00     4842     6103
+
+Further Distributional Parameters:
+      Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sigma     0.72      0.00     0.71     0.73 1.00    14127    10130
+
+Draws were sampled using sample(hmc). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).
