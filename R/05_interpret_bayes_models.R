@@ -1,3 +1,28 @@
+## ---- load-pre-reqs-interp
+
+# formulate-priors-intervention-effect
+
+prior_comm <- brms::prior("normal(0.19, 0.10)", class = "b", coef = "group1:time2")
+
+prior_safe <- brms::prior("normal(-0.20, 0.14)", class = "b", coef = "group1:time2")
+
+prior_hapa2 <- brms::prior("normal(0.31, 0.15)", class="b", coef = "group1:time2")
+
+prior_hapa3 <- brms::prior("normal(0.13, 0.20)", class="b", coef = "group1:time2")
+
+prior_hapa5 <- brms::prior("normal(0.33, 0.19)", class="b", coef = "group1:time2")
+
+bayesian_model_comm_summary <- summary(bayesian_model_comm)
+
+bayesian_model_safe_summary <- summary(bayesian_model_safe)
+
+bayesian_model_hapa2_summary <- summary(bayesian_model_hapa2)
+
+bayesian_model_hapa3_summary <- summary(bayesian_model_hapa3)
+
+bayesian_model_hapa5_summary <- summary(bayesian_model_hapa5)
+
+
 ## ---- interpret-parameters
 
 # create dataset with required variables

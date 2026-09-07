@@ -15,7 +15,7 @@ prior_hapa3 <- brms::prior("normal(0.13, 0.20)", class="b", coef = "group1:time2
 prior_hapa5 <- brms::prior("normal(0.33, 0.19)", class="b", coef = "group1:time2")
 
 
-# formulate-priors-intervention-effect
+# models
 
 bayesian_model_comm <- brm(comm_mean_scaled ~ group*time + 
                              age_scaled + 
