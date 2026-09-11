@@ -197,3 +197,137 @@ tx_post <- function(var, data){
   return(data)
   
 }
+
+## ---- default-model
+default_model <- function(data, outcome_prefix){
+  
+  outcome_var <- paste0(outcome_prefix, "_scaled")
+  
+  predictors <- c("group*time", "age_scaled", "education", "fam_comp")
+  
+  model_formula <- reformulate(termlabels = predictors, response = outcome_var)
+  
+  lm(model_formula, data = data)
+  
+}
+
+## ---- extract-variance-estimates
+model_variance_estimates <- function(fit) {
+  
+  sqrt(diag(vcov(fit)))
+  
+}
+
+## ---- FMI-Rubin-Rule
+fmi_rubin_rule <- function(data, outcome_var){
+  
+  fit_each <- lapply(data, default_model, outcome_prefix = outcome_var)
+  
+  estimates_matrix <- sapply(fit_each, coef)
+  
+  se_matrix <- sapply(fit_each, model_variance_estimates)
+  
+  M <- ncol(estimates_matrix)
+  
+  Q_bar <- rowMeans(estimates_matrix)
+  U_bar <- rowMeans(se_matrix^2)
+  B <- apply(estimates_matrix, 1, var)
+  
+  T      <- U_bar + (1 + 1/M) * B
+  FMI    <- ((1 + 1/M) * B) / T
+  RIV    <- ((1 + 1/M) * B) / U_bar
+  lambda <- ((1 + 1/M) * B) / T
+  
+  fmi_output <- data.frame(
+    FMI = FMI,
+    RIV = RIV,
+    lambda = lambda
+  )
+  
+  return(fmi_output)
+  
+}
+
+## ---- create-brms-formula
+make_brms_formula <- function(outcome_prefix) {
+  
+  outcome_var <- paste0(outcome_prefix, "_scaled")
+  
+  model_string <- paste(outcome_var, 
+                        "~ group*time + age_scaled + education + fam_comp + (1 | id)"
+  )
+  
+  return(brms::brmsformula(model_string))
+  
+}
+
+## ---- select-prior
+select_prior <- function(type){
+  
+  if(type == "wide"){
+    
+    prior <- brms::prior("normal(0, 0.50)", class = "b", coef = "group1:time2")
+    
+  } else if(type == "very wide") {
+    
+    prior <- brms::prior("normal(0, 1.00)", class = "b", coef = "group1:time2")
+    
+  }
+  
+  return(prior)
+  
+}
+
+## ---- create-directory
+create_directory <- function(location){
+  
+  if (!dir.exists(paste0(location, "/prior_sensitivity"))) {
+    dir.create(paste0(location, "/prior_sensitivity"), recursive = TRUE)
+  }
+  
+}
+
+## ---- prior-sensitivity-test
+prior_sensitivity_test <- function(data, outcome, prior_type){
+  
+  formula <- make_brms_formula(outcome)
+  
+  prior <- select_prior(prior_type)
+  
+  create_directory("output")
+  
+  message("Running: ", outcome, " | prior = ", prior_type)
+  
+  model <- brms::brm_multiple(
+    formula,
+    data = data_imputed_output,
+    chains = 4,
+    cores = 4,
+    iter = 4000,
+    warmup = 500,
+    backend = "cmdstanr",
+    control = list(
+      adapt_delta = 0.95,
+      max_treedepth = 15
+    ),
+    prior = prior
+  )
+  
+  model_file <- paste0("output/prior_sensitivity/", "bayesian_model_", outcome_name,
+                       "_", prior_name, "_", Sys.Date(), ".rds"
+  )
+  
+  summary_file <- paste0(
+    "output/prior_sensitivity/", "bayesian_model_", outcome_name,
+    "_", prior_name, "_", Sys.Date(), ".txt"
+  )
+  
+  saveRDS(model, file = model_file)
+  
+  sink(summary_file)
+  print(summary(model))
+  sink()
+  
+  return(model)
+  
+}

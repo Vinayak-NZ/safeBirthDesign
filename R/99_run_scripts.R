@@ -28,3 +28,9 @@ source("R/06_visualise_bayes_output.R")
 source("R/07_sensitivity_check_01.R")
 source("R/07_sensitivity_check_02.R")
 source("R/07_sensitivity_check_03.R")
+
+
+source("flow_5.R")
+source("flow_6.R")
+
+source("flow_7.R")
