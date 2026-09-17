@@ -1,8 +1,10 @@
 ## ---- sensitivity-check-prepare
 
-data_imputed_output <- vector("list", data_imputed$m)
+data_imputed_output <- vector("list", data_imputed$m - 117)
 
-for (i in 1:data_imputed$m) {
+adjusted_length <- data_imputed$m - 117
+
+for (i in 1:adjusted_length) {
   data_imputed_output[[i]] <- complete(data_imputed, i)
 }
 

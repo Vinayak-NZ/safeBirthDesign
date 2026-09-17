@@ -1,0 +1,121 @@
+## ---- bayes-model-input-single
+
+# single-imputed-data-set
+
+data_single_imputed_output <- data_imputed_output[[1]]
+
+# formulate-priors-intervention-effect
+
+prior_comm <- brms::prior("normal(0.19, 0.10)", class = "b", coef = "group1:time2")
+
+prior_safe <- brms::prior("normal(-0.20, 0.14)", class = "b", coef = "group1:time2")
+
+prior_hapa2 <- brms::prior("normal(0.31, 0.15)", class="b", coef = "group1:time2")
+
+prior_hapa3 <- brms::prior("normal(0.13, 0.20)", class="b", coef = "group1:time2")
+
+prior_hapa5 <- brms::prior("normal(0.33, 0.19)", class="b", coef = "group1:time2")
+
+
+# models
+
+bayesian_model_single_comm <- brm(
+  comm_mean_scaled ~ group*time + age_scaled + education + fam_comp + (1 | id), 
+  data = data_single_imputed_output, 
+  chains = 4, 
+  cores = 4, 
+  iter = 4000, 
+  warmup = 500, 
+  backend = "cmdstanr", 
+  control = list(adapt_delta = 0.95, max_treedepth = 15), 
+  prior = prior_comm
+)
+
+bayesian_model_single_comm_summary <- summary(bayesian_model_single_comm)
+
+saveRDS(bayesian_model_single_comm, file = paste0("output/bayesian_model_single_comm_", Sys.Date(), ".rds"))
+
+sink(paste0("output/bayesian_model_single_comm_", Sys.Date(), ".txt"))
+print(summary(bayesian_model_single_comm))
+sink()
+
+
+bayesian_model_single_safe <- brm(
+  safe_mean_scaled ~ group*time + age_scaled + education + fam_comp + (1 | id), 
+  data = data_single_imputed_output, 
+  chains = 4, 
+  cores = 4, 
+  iter = 4000, 
+  warmup = 500, 
+  backend = "cmdstanr", 
+  control = list(adapt_delta = 0.95, max_treedepth = 15), 
+  prior = prior_safe
+)
+
+bayesian_model_single_safe_summary <- summary(bayesian_model_single_safe)
+
+saveRDS(bayesian_model_single_safe, file = paste0("output/bayesian_model_single_safe_", Sys.Date(), ".rds"))
+
+sink(paste0("output/bayesian_model_single_safe_", Sys.Date(), ".txt"))
+print(summary(bayesian_model_single_safe))
+sink()
+
+bayesian_model_single_hapa2 <- brm(
+  hapa2_scaled ~ group*time + age_scaled + education + fam_comp + (1 | id), 
+  data = data_single_imputed_output, 
+  chains = 4, 
+  cores = 4, 
+  iter = 4000, 
+  warmup = 500, 
+  backend = "cmdstanr", 
+  control = list(adapt_delta = 0.95, max_treedepth = 15), 
+  prior = prior_hapa2
+)
+
+bayesian_model_single_hapa2_summary <- summary(bayesian_model_single_hapa2)
+
+saveRDS(bayesian_model_single_hapa2, file = paste0("output/bayesian_model_single_hapa2_", Sys.Date(), ".rds"))
+
+sink(paste0("output/bayesian_model_single_hapa2_", Sys.Date(), ".txt"))
+print(summary(bayesian_model_single_hapa2))
+sink()
+
+bayesian_model_single_hapa3 <- brm(
+  hapa3_scaled ~ group*time + age_scaled + education + fam_comp + (1 | id), 
+  data = data_single_imputed_output, 
+  chains = 4, 
+  cores = 4, 
+  iter = 4000, 
+  warmup = 500, 
+  backend = "cmdstanr", 
+  control = list(adapt_delta = 0.95, max_treedepth = 15), 
+  prior = prior_hapa3
+)
+
+bayesian_model_single_hapa3_summary <- summary(bayesian_model_single_hapa3)
+
+saveRDS(bayesian_model_single_hapa3, file = paste0("output/bayesian_model_single_hapa3_", Sys.Date(), ".rds"))
+
+sink(paste0("output/bayesian_model_single_hapa3_", Sys.Date(), ".txt"))
+print(summary(bayesian_model_single_hapa3))
+sink()
+
+bayesian_model_single_hapa5 <- brm(
+  hapa5_scaled ~ group*time + age_scaled + education + fam_comp + (1 | id), 
+  data = data_single_imputed_output, 
+  chains = 4, 
+  cores = 4, 
+  iter = 4000, 
+  warmup = 500, 
+  backend = "cmdstanr", 
+  control = list(adapt_delta = 0.95, max_treedepth = 15), 
+  prior = prior_hapa5
+)
+
+bayesian_model_single_hapa5_summary <- summary(bayesian_model_single_hapa5)
+
+saveRDS(bayesian_model_single_hapa5, file = paste0("output/bayesian_model_single_hapa5_", Sys.Date(), ".rds"))
+
+sink(paste0("output/bayesian_model_single_hapa5_", Sys.Date(), ".txt"))
+print(summary(bayesian_model_single_hapa5))
+sink()

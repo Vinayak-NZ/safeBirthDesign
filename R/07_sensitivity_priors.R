@@ -1,72 +1,62 @@
-# Load model
-model_input <- readRDS("output/bayesian_model_hapa5_2026-09-08.rds")
 
-# Packages
-library(posterior)
-library(brms)
+## ---- prior-sensitivity-tests
 
-# ---------------------------------------------------------
-# Settings
-# ---------------------------------------------------------
-
-# ROPE limits
-rope_lower <- -0.10
-rope_upper <-  0.10
-
-# Parameter of interest
-parameter <- "b_group1:time2"
-
-
-# ---------------------------------------------------------
-# Extract posterior draws
-# ---------------------------------------------------------
-
-draws <- as_draws_matrix(model_input)
-
-beta <- draws[, parameter]
-
-
-# ---------------------------------------------------------
-# Probability of Direction (PD)
-# ---------------------------------------------------------
-
-pd <- max(
-  mean(beta > 0),
-  mean(beta < 0)
+bayesian_model_comm_wide <- prior_sensitivity_test(
+  data = data_imputed_output, 
+  outcome = "comm_mean", 
+  prior_type = "wide"
 )
 
-
-# ---------------------------------------------------------
-# Probability of ROPE (P(ROPE))
-# ---------------------------------------------------------
-
-p_rope <- mean(
-  beta >= rope_lower &
-    beta <= rope_upper
+bayesian_model_comm_very_wide <- prior_sensitivity_test(
+  data = data_imputed_output, 
+  outcome = "comm_mean", 
+  prior_type = "very wide"
 )
 
-
-# ---------------------------------------------------------
-# Bayesian R-squared
-# ---------------------------------------------------------
-
-r2_draws <- bayes_R2(
-  model_input,
-  summary = FALSE
+bayesian_model_safe_wide <- prior_sensitivity_test(
+  data = data_imputed_output, 
+  outcome = "safe_mean", 
+  prior_type = "wide"
 )
 
-r2_median <- median(r2_draws)
-r2_lower  <- quantile(r2_draws, 0.025)
-r2_upper  <- quantile(r2_draws, 0.975)
+bayesian_model_safe_very_wide <- prior_sensitivity_test(
+  data = data_imputed_output, 
+  outcome = "safe_mean", 
+  prior_type = "very wide"
+)
 
+bayesian_model_hapa2_wide <- prior_sensitivity_test(
+  data = data_imputed_output, 
+  outcome = "hapa2", 
+  prior_type = "wide"
+)
 
-# ---------------------------------------------------------
-# Print results
-# ---------------------------------------------------------
+bayesian_model_hapa2_very_wide <- prior_sensitivity_test(
+  data = data_imputed_output, 
+  outcome = "hapa2", 
+  prior_type = "very wide"
+)
 
-cat("\nTreatment effect:", parameter, "\n")
-cat("PD:", round(pd, 3), "\n")
-cat("P(ROPE):", round(p_rope, 3), "\n")
-cat("\nBayesian R²:\n")
-cat("Median:", round(r2_median, 3), "\n")
-cat("95% CrI:", round(r2_lower, 3), "to", round(r2_upper, 3), "\n")
+bayesian_model_hapa3_wide <- prior_sensitivity_test(
+  data = data_imputed_output, 
+  outcome = "hapa3", 
+  prior_type = "wide"
+)
+
+bayesian_model_hapa3_very_wide <- prior_sensitivity_test(
+  data = data_imputed_output, 
+  outcome = "hapa3", 
+  prior_type = "very wide"
+)
+
+bayesian_model_hapa5_wide <- prior_sensitivity_test(
+  data = data_imputed_output, 
+  outcome = "hapa5", 
+  prior_type = "wide"
+)
+
+bayesian_model_hapa5_very_wide <- prior_sensitivity_test(
+  data = data_imputed_output, 
+  outcome = "hapa5", 
+  prior_type = "very wide"
+)

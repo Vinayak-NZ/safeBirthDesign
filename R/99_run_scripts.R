@@ -17,12 +17,14 @@ source("R/03_impute_data.R")
 source("R/04_post_impute_edits.R")
 source("R/05_build_bayes_models.R")
 source("R/05_interpret_bayes_models.R")
+source("R/05_build_bayes_model_single.R")
 
 ## ---- visualise-data
 source("R/06_socio_dems.R")
 source("R/06_create_flowchart_input.R")
 source("R/06_output_flowchart.R")
 source("R/06_visualise_bayes_output.R")
+source("R/06_output_bayes_model_convergence_plots.R")
 
 ## ---- sensitivity-check
 source("R/07_sensitivity_check_01.R")
@@ -30,7 +32,5 @@ source("R/07_sensitivity_check_02.R")
 source("R/07_sensitivity_check_03.R")
 
 
-source("flow_5.R")
-source("flow_6.R")
+source("R/flow_11.R")
 
-source("flow_7.R")

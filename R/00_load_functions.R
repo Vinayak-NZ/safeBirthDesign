@@ -331,3 +331,107 @@ prior_sensitivity_test <- function(data, outcome, prior_type){
   return(model)
   
 }
+
+## ---- create-bayesian-convergence-stats
+bayesian_convergence <- function(model_input, var, imputations = 122){
+  
+  m <- imputations
+  
+  draws <- as_draws_array(model_input)
+  
+  nc <- nchains(model_input) / m
+  
+  draws_per_dat <- lapply(
+    1:m,
+    \(i) subset_draws(
+      draws,
+      chain = ((i - 1) * nc + 1):(i * nc)
+    )
+  )
+  
+  diagnostics_per_dat <- lapply(
+    draws_per_dat,
+    summarise_draws,
+    default_convergence_measures()
+  )
+  
+  saveRDS(diagnostics_per_dat, paste0("output/model_output/", 
+                                      "bayesian_model_", 
+                                      var, 
+                                      "_output.rds"))
+  
+  return(diagnostics_per_dat)
+  
+}
+
+## ---- output-bayesian-convergence-table
+convergence_table <- function(model_input){
+  
+  diagnostics_per_dat <- readRDS(paste0("output/model_output/", 
+                                    "bayesian_model_", 
+                                    model_input, 
+                                    "_output.rds"))
+  
+  diagnostics_all <- do.call(
+    rbind,
+    lapply(
+      seq_along(diagnostics_per_dat),
+      function(i) {
+        x <- diagnostics_per_dat[[i]]
+        x$imputation <- i
+        x
+      }
+    )
+  )
+  
+  rownames(diagnostics_all) <- NULL
+
+  summary_diagnostics <- diagnostics_all %>%
+    group_by(variable) %>%
+    summarize(
+      max_Rhat = max(rhat, na.rm = TRUE),
+      min_bulk_ESS = min(ess_bulk, na.rm = TRUE),
+      median_bulk_ESS = median(ess_bulk, na.rm = TRUE),
+      min_tail_ESS = min(ess_tail, na.rm = TRUE),
+      median_tail_ESS = median(ess_tail, na.rm = TRUE),
+      .groups = "drop"
+    )
+  
+  target_order <- c(
+    "sd_id__Intercept",
+    "b_Intercept",
+    "b_group1",
+    "b_time2",
+    "b_age_scaled",
+    "b_education.L",
+    "b_education.Q",
+    "b_education.C",
+    "b_fam_comp.L",
+    "b_fam_comp.Q",
+    "b_group1:time2",
+    "sigma"
+  )
+  
+  summary_diagnostics <- summary_diagnostics[
+    match(target_order, 
+          summary_diagnostics$variable), ]
+  
+  rownames(summary_diagnostics) <- NULL
+  
+  summary_file_convergence <- paste0(
+    "output/", "bayesian_model_convergence_", 
+    model_input,
+    "_", Sys.Date(), ".txt"
+  )
+
+  write.table(
+    summary_diagnostics, 
+    file = summary_file_convergence, 
+    sep = "\t", 
+    row.names = FALSE, 
+    quote = FALSE
+  )
+  
+  return(summary_diagnostics)
+  
+}

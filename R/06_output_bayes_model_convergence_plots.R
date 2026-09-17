@@ -4,7 +4,7 @@
 
 # model-estimates
 brm_model_comm_output <- 
-  posterior_summary(bayesian_model_comm, 
+  posterior_summary(bayesian_model_single_comm, 
                     probs = c(0.025, 0.975), 
                     robust = TRUE, 
                     variable = c("b_Intercept", 
@@ -22,27 +22,11 @@ brm_model_comm_output <-
 
 brm_model_comm_output
 
-# statistical-significance-estimates
-model_brm_comm_pd_values <- p_direction(bayesian_model_comm)
-
-print(model_brm_comm_pd_values)
-
-# practical-significance-estimates
-brm_comm_rope_values <- p_rope(bayesian_model_comm)
-
-print(brm_comm_rope_values)
-
-# explanatory-power
-bayes_R2(bayesian_model_comm, summary = TRUE, ndraws = 1000)
-
-# general-summary
-summary(bayesian_model_comm)
-
 # trace-plots
-mcmc_plot(bayesian_model_comm, type = "trace")
+mcmc_plot(bayesian_model_single_comm, type = "trace")
 
 # posterior-predictive-check
-pp_check(bayesian_model_comm, ndraws = 100) +
+pp_check(bayesian_model_single_comm, ndraws = 100) +
 labs(
   title = "Communication competency - Posterior Predictive Check",
   subtitle = "Observed (y) vs. posterior predicted distributions (yrep)",
@@ -67,7 +51,7 @@ theme(
 
 # model-estimates
 brm_model_safe_output <- 
-  posterior_summary(bayesian_model_safe, 
+  posterior_summary(bayesian_model_single_safe, 
                     probs = c(0.025, 0.975), 
                     robust = TRUE, 
                     variable = c("b_Intercept", 
@@ -85,27 +69,11 @@ brm_model_safe_output <-
 
 brm_model_safe_output
 
-# statistical-significance-estimates
-model_brm_safe_pd_values <- p_direction(bayesian_model_safe)
-
-print(model_brm_safe_pd_values)
-
-# practical-significance-estimates
-brm_safe_rope_values <- p_rope(bayesian_model_safe)
-
-print(brm_safe_rope_values)
-
-# explanatory-power
-bayes_R2(bayesian_model_safe, summary = TRUE, ndraws = 1000)
-
-# general-summary
-summary(bayesian_model_safe)
-
 # trace-plots
-mcmc_plot(bayesian_model_safe, type = "trace")
+mcmc_plot(bayesian_model_single_safe, type = "trace")
 
 # posterior-predictive-check
-pp_check(bayesian_model_safe, ndraws = 100) +
+pp_check(bayesian_model_single_safe, ndraws = 100) +
   labs(
     title = "Perceived PAEs - Posterior Predictive Check",
     subtitle = "Observed (y) vs. posterior predicted distributions (yrep)",
@@ -130,7 +98,7 @@ pp_check(bayesian_model_safe, ndraws = 100) +
 
 # model-estimates
 brm_model_hapa2_output <- 
-  posterior_summary(bayesian_model_hapa2, 
+  posterior_summary(bayesian_model_single_hapa2, 
                     probs = c(0.025, 0.975), 
                     robust = TRUE, 
                     variable = c("b_Intercept", 
@@ -148,27 +116,11 @@ brm_model_hapa2_output <-
 
 brm_model_hapa2_output
 
-# statistical-significance-estimates
-model_brm_hapa2_pd_values <- p_direction(bayesian_model_hapa2)
-
-print(model_brm_hapa2_pd_values)
-
-# practical-significance-estimates
-brm_hapa2_rope_values <- p_rope(bayesian_model_hapa2)
-
-print(brm_hapa2_rope_values)
-
-# explanatory-power
-bayes_R2(bayesian_model_hapa2, summary = TRUE, ndraws = 1000)
-
-# general-summary
-summary(bayesian_model_hapa2)
-
 # trace-plots
-mcmc_plot(bayesian_model_hapa2, type = "trace")
+mcmc_plot(bayesian_model_single_hapa2, type = "trace")
 
 # posterior-predictive-check
-pp_check(bayesian_model_hapa2, ndraws = 100) +
+pp_check(bayesian_model_single_hapa2, ndraws = 100) +
   labs(
     title = "Outcome expectancy - Posterior Predictive Check",
     subtitle = "Observed (y) vs. posterior predicted distributions (yrep)",
@@ -193,7 +145,7 @@ pp_check(bayesian_model_hapa2, ndraws = 100) +
 
 # model-estimates
 brm_model_hapa3_output <- 
-  posterior_summary(bayesian_model_hapa3, 
+  posterior_summary(bayesian_model_single_hapa3, 
                     probs = c(0.025, 0.975), 
                     robust = TRUE, 
                     variable = c("b_Intercept", 
@@ -211,27 +163,11 @@ brm_model_hapa3_output <-
 
 brm_model_hapa3_output
 
-# statistical-significance-estimates
-model_brm_hapa3_pd_values <- p_direction(bayesian_model_hapa3)
-
-print(model_brm_hapa3_pd_values)
-
-# practical-significance-estimates
-brm_hapa3_rope_values <- p_rope(bayesian_model_hapa3)
-
-print(brm_hapa3_rope_values)
-
-# explanatory-power
-bayes_R2(bayesian_model_hapa3, summary = TRUE, ndraws = 1000)
-
-# general-summary
-summary(bayesian_model_hapa3)
-
 # trace-plots
-mcmc_plot(bayesian_model_hapa3, type = "trace")
+mcmc_plot(bayesian_model_single_hapa3, type = "trace")
 
 # posterior-predictive-check
-pp_check(bayesian_model_hapa3, ndraws = 100) +
+pp_check(bayesian_model_single_hapa3, ndraws = 100) +
   labs(
     title = "Coping self-efficacy - Posterior Predictive Check",
     subtitle = "Observed (y) vs. posterior predicted distributions (yrep)",
@@ -256,7 +192,7 @@ pp_check(bayesian_model_hapa3, ndraws = 100) +
 
 # model-estimates
 brm_model_hapa5_output <- 
-  posterior_summary(bayesian_model_hapa5, 
+  posterior_summary(bayesian_model_single_hapa5, 
                     probs = c(0.025, 0.975), 
                     robust = TRUE, 
                     variable = c("b_Intercept", 
@@ -274,27 +210,11 @@ brm_model_hapa5_output <-
 
 brm_model_hapa5_output
 
-# statistical-significance-estimates
-model_brm_hapa5_pd_values <- p_direction(bayesian_model_hapa5)
-
-print(model_brm_hapa5_pd_values)
-
-# practical-significance-estimates
-brm_hapa5_rope_values <- p_rope(bayesian_model_hapa5)
-
-print(brm_hapa5_rope_values)
-
-# explanatory-power
-bayes_R2(bayesian_model_hapa5, summary = TRUE, ndraws = 1000)
-
-# general-summary
-summary(bayesian_model_hapa5)
-
 # trace-plots
-mcmc_plot(bayesian_model_hapa5, type = "trace")
+mcmc_plot(bayesian_model_single_hapa5, type = "trace")
 
 # posterior-predictive-check
-pp_check(bayesian_model_hapa5, ndraws = 100) +
+pp_check(bayesian_model_single_hapa5, ndraws = 100) +
   labs(
     title = "Action planning - Posterior Predictive Check",
     subtitle = "Observed (y) vs. posterior predicted distributions (yrep)",
